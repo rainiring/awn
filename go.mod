@@ -1,4 +1,4 @@
-module github.com/B1NARY-GR0UP/nwa
+module github.com/rainiring/awn
 
 go 1.23
 
