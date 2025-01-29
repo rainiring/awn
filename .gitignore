@@ -27,3 +27,5 @@ output/*
 
 # Vscode files
 .vscode
+# Added by goreleaser init:
+dist/
