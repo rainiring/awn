@@ -16,10 +16,10 @@ FROM scratch
 
 # source to be scanned should be mounted to /src
 WORKDIR /src
-COPY --from=build /app/nwa /app/nwa
+COPY --from=build /app/awn /app/awn
 
-ENTRYPOINT ["/app/nwa"]
+ENTRYPOINT ["/app/awn"]
 
 LABEL org.opencontainers.image.source=https://github.com/rainiring/awn
-LABEL org.opencontainers.image.description="NWA - A More Powerful License Header Management Tool"
+LABEL org.opencontainers.image.description="AWN"
 LABEL org.opencontainers.image.licenses=Apache
