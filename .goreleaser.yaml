@@ -13,7 +13,6 @@ builds:
       - linux
       - windows
       - darwin
-#    binary: awn
 
 archives:
   - formats: [ 'tar.gz' ]
@@ -33,7 +32,7 @@ checksum:
 
 release:
   mode: keep-existing
-  name_template: ""
+  name_template: "{{ .Tag | replace \"v\" \"\" }} ({{ .Env.CURRENT_DATE }})"
 
 brews:
   - description: awn homebrew test
