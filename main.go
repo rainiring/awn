@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/B1NARY-GR0UP/nwa/cmd"
+import "github.com/rainiring/awn/cmd"
 
 func main() {
 	cmd.Execute()

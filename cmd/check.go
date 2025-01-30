@@ -15,7 +15,7 @@
 package cmd
 
 import (
-	"github.com/B1NARY-GR0UP/nwa/internal"
+	"github.com/rainiring/awn/internal"
 	"github.com/spf13/cobra"
 )
 

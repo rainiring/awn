@@ -21,8 +21,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/B1NARY-GR0UP/nwa/internal"
 	"github.com/bmatcuk/doublestar/v4"
+	"github.com/rainiring/awn/internal"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

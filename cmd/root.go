@@ -21,14 +21,14 @@ import (
 	"os"
 	"time"
 
-	"github.com/B1NARY-GR0UP/nwa/internal"
 	"github.com/bmatcuk/doublestar/v4"
+	"github.com/rainiring/awn/internal"
 	"github.com/spf13/cobra"
 )
 
 const (
-	Name    = "nwa"
-	Version = "v0.5.1"
+	Name    = "awn"
+	Version = "dev"
 )
 
 // rootCmd represents the base command when called without any subcommands
