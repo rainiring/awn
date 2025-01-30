@@ -1,22 +1,6 @@
-FROM golang:1.23 AS build
-
-WORKDIR /app
-
-COPY go.mod go.sum ./
-RUN go mod tidy
-
-# copy source and build
-# disable cgo can reduce the size of binary file
-COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build .
-
-
-# make a bare minimal image
 FROM scratch
 
-# source to be scanned should be mounted to /src
-WORKDIR /src
-COPY --from=build /app/awn /app/awn
+COPY dist/awn_linux_x86_64/awn /app/awn
 
 ENTRYPOINT ["/app/awn"]
 

@@ -15,8 +15,7 @@ builds:
       - darwin
 
 archives:
-  - format: tar.gz
-    # this name template makes the OS and Arch compatible with the results of `uname`.
+  - formats: [ 'tar.gz' ]
     name_template: >-
       {{ .ProjectName }}_
       {{- title .Os }}_
@@ -24,20 +23,12 @@ archives:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
-    # use zip for windows archives
     format_overrides:
       - goos: windows
-        format: zip
+        formats: [ 'zip' ]
 
 checksum:
   name_template: "checksums.txt"
-
-changelog:
-  sort: asc
-  filters:
-    exclude:
-      - "^docs:"
-      - "^test:"
 
 release:
   mode: keep-existing
@@ -59,3 +50,12 @@ brews:
       bin.install "awn"
     test: |
       system "#{bin}/awn --version"
+
+dockers:
+  - image_templates:
+      - "ghcr.io/{{ .Env.IMAGE_NAME }}:{{ .Version }}"
+      - "ghcr.io/{{ .Env.IMAGE_NAME }}:latest"
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - "--platform=linux/amd64"
