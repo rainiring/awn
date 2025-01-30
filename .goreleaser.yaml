@@ -13,6 +13,7 @@ builds:
       - linux
       - windows
       - darwin
+    binary: awn
 
 archives:
   - formats: [ 'tar.gz' ]
@@ -60,3 +61,5 @@ dockers:
     use: buildx
     build_flag_templates:
       - "--platform=linux/amd64"
+    extra_files:
+      - dist/awn_linux_amd64_v1/awn
