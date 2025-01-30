@@ -32,6 +32,7 @@ checksum:
 
 release:
   mode: keep-existing
+  name_template: ""
 
 brews:
   - description: awn homebrew test
