@@ -31,8 +31,7 @@ checksum:
   name_template: "checksums.txt"
 
 release:
-  mode: keep-existing
-  name_template: "{{ .Tag | trimPrefix \"v\" }} ({{ .Env.CURRENT_DATE }})"
+  name_template: "{{ .Version }} ({{ .Env.CURRENT_DATE }})"
 
 brews:
   - description: awn homebrew test
